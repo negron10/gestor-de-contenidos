@@ -16,20 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from hola.views import hola
-from hola.chao import chao, principal
 from rest_framework.documentation import include_docs_urls
+from mainView.view import main
 from contentManagement import views
 
-API_TITLE = 'API contentManagement'
+API_TITLE = 'API Manejador de Contenidos'
 API_DESCRIPTION = 'Documentacion API'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', hola),
-    url(r'^chao$', chao),
-    url(r'^raiz$', principal),
-    #url(r'^$', views.index, name='index'),
+    url(r'^$', main),
     url(r'^api/', include(('api.urls', 'api'), namespace='api')),
     url(r'^docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION))
 ]

@@ -20,16 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o6q7^)m+hrp6$fl6ybk5h1h$mi^8haok0z&@x0lt7z8vds0b-t'
+SECRET_KEY = 'j858zo_#m8*!rp4ov5!!e)!%s$d7(_s!6sr)$tq51v1#5pf-+9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:4200'
-]
 
 
 # Application definition
@@ -43,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'user',
+    'person',
     'content'
 ]
 
@@ -55,14 +51,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
-
-ROOT_URLCONF = 'contentManagement.urls'
 
 REST_FRAMEWORK = {
   'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
+
+
+ROOT_URLCONF = 'contentManagement.urls'
 
 TEMPLATES = [
     {
